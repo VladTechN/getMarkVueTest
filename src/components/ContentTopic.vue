@@ -1,16 +1,22 @@
 <template>
   <section>
-    <h3>
-      {{ props.title }}
+    <h3
+      v-edit-text="`pages.${page}.sections.${index}.title`"
+      :key="title"
+    >
+      {{ title }}
     </h3>
-    <p>
-      {{ props.content }}
+    <p
+      v-edit-text="`pages.${page}.sections.${index}.content`"
+      :key="content"
+    >
+      {{ content }}
     </p>
   </section>
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     required: true,

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2>{{ title }}</h2>
+    <h2 v-edit-text="`pages.${pageName}.title`" :key="title">{{ title }}</h2>
     <div class="sections-wrapper">
       <ContentTopic
         v-for="(section, index) in sections"
@@ -19,7 +19,8 @@
 import { computed } from "vue"
 import { useRoute } from "vue-router"
 import ContentTopic from "@/components/ContentTopic.vue"
-import { useTranslate } from '../composables/useTranslate';
+import { useTranslate } from '@/composables/useTranslate';
+import { vEditText } from '@/directives'
 
 const { translations } = useTranslate()
 

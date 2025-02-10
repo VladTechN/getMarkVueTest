@@ -1,6 +1,6 @@
 <template>
   <header>
-    <p>
+    <p v-edit-text="'headerTitle'" :key="headerTitle">
       {{ headerTitle}}
     </p>
     <div>
@@ -34,6 +34,10 @@ const sectionLinks = computed(() =>
 
 <style scoped>
 header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,6 +85,9 @@ a:hover {
   a {
     font-size: 14px;
     padding: 5px 15px;
+  }
+  header div {
+    flex-wrap: wrap;
   }
 }
 </style>
